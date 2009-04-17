@@ -9,6 +9,7 @@
         <root-zone>sourcecode.diff</root-zone>
 
         <detectors>
+            <filename casesensitive="true">COMMIT_EDITMSG</filename>
             <extension>diff</extension>
             <extension>patch</extension>
             <match-content lines="1">(?x)^

@@ -1,4 +1,0 @@
-diff.sugar for Espresso
-=======================
-
-Write me.

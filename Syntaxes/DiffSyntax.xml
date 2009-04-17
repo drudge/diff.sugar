@@ -67,13 +67,13 @@
             
             <zone name="markup.changed.diff">
                 <expression>^(!).*$\n?</expression>
-                <capture number="1" name="punctuation.definition.inserted.diff" />
+                <capture number="1" name="punctuation.definition.changed.diff" />
             </zone>
             
             <zone name="markup.deleted.diff">
                 <expression>^(((&lt;)( .*)?)|((-).*))$\n?</expression>
-                <capture number="3" name="punctuation.definition.inserted.diff" />
-                <capture number="6" name="punctuation.definition.inserted.diff" />
+                <capture number="3" name="punctuation.definition.deleted.diff" />
+                <capture number="6" name="punctuation.definition.deleted.diff" />
             </zone>
 
         </collection>

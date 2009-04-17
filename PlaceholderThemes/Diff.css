@@ -1,0 +1,38 @@
+/*
+	@theme Diff Placeholder
+	@placeholder diff
+*/
+
+@base {
+	color: #333;
+	background-color: #fff;
+}
+
+diff > meta {
+    color: #ccc;
+}
+
+diff punctuation.definition.inserted.diff {
+	background-color: #99dda7;
+	color: #000;
+}
+
+diff > markup.inserted.diff {
+	background-color: #99dda7;
+	color: #000;
+}
+
+diff punctuation.definition.deleted.diff {
+	background-color: #d44950;
+	color: #000;
+}
+
+diff > markup.deleted.diff {
+	background-color: #d44950;
+	color: #000;
+}
+
+diff punctuation.definition.changed.diff {
+	background-color: #d4430d;
+	color: #000;
+}

@@ -2,4 +2,82 @@
 
 <syntax name="sourcecode.diff">
 
+    <zones>
+        <include collection="meta"/>
+        <include collection="markup"/>
+    </zones>
+
+    <library>
+    
+        <collection name="meta">
+        
+            <zone name="meta.separator.diff">
+                <expression>^((\*{15})|(={67})|(-{3}))$\n?</expression>
+                <capture number="1" name="punctuation.definition.separator.diff" />
+            </zone>
+
+            <zone name="meta.diff.range.normal">
+                <expression>^\d+(,\d+)*(a|d|c)\d+(,\d+)*$\n?</expression>
+            </zone>
+            
+            <zone name="meta.diff.range.unified">
+                <expression>^(@@)\s*(.+?)\s*(@@)($\n?)?</expression>
+                <capture number="1" name="punctuation.definition.range.diff" />
+                <capture number="2" name="meta.toc-list.line-number.diff" />
+                <capture number="3" name="punctuation.definition.range.diff" />
+            </zone>
+            
+            <zone name="meta.diff.range.context">
+                <expression>^(((\-{3}) .+ (\-{4}))|((\*{3}) .+ (\*{4})))$\n?</expression>
+                <capture number="3" name="punctuation.definition.range.diff" />
+                <capture number="4" name="punctuation.definition.range.diff" />
+                <capture number="6" name="punctuation.definition.range.diff" />
+                <capture number="7" name="punctuation.definition.range.diff" />
+            </zone>
+            
+            <zone name="meta.diff.header.from-file">
+                <expression>(^(((-{3}) .+)|((\*{3}) .+))$\n?|^(={4}) .+(?= - ))</expression>
+                <capture number="4" name="punctuation.definition.from-file.diff" />
+                <capture number="6" name="punctuation.definition.from-file.diff" />
+                <capture number="7" name="punctuation.definition.from-file.diff" />
+            </zone>
+            
+            <zone name="meta.diff.header.to-file">
+                <expression>(^(\+{3}) .+$\n?| (-) .* (={4})$\n?)</expression>
+                <capture number="2" name="punctuation.definition.to-file.diff" />
+                <capture number="3" name="punctuation.definition.to-file.diff" />
+                <capture number="4" name="punctuation.definition.to-file.diff" />
+            </zone>
+            
+            <zone name="meta.diff.index">
+                <expression>^Index(:) (.+)$\n?</expression>
+                <capture number="1" name="punctuation.separator.key-value.diff" />
+                <capture number="2" name="meta.toc-list.file-name.diff" />
+            </zone>
+            
+        </collection>
+
+        <collection name="markup">
+            
+            <zone name="markup.inserted.diff">
+                <expression>^(((&gt;)( .*)?)|((\+).*))$\n?</expression>
+                <capture number="3" name="punctuation.definition.inserted.diff" />
+                <capture number="6" name="punctuation.definition.inserted.diff" />
+            </zone>
+            
+            <zone name="markup.changed.diff">
+                <expression>^(!).*$\n?</expression>
+                <capture number="1" name="punctuation.definition.inserted.diff" />
+            </zone>
+            
+            <zone name="markup.deleted.diff">
+                <expression>^(((&lt;)( .*)?)|((-).*))$\n?</expression>
+                <capture number="3" name="punctuation.definition.inserted.diff" />
+                <capture number="6" name="punctuation.definition.inserted.diff" />
+            </zone>
+
+        </collection>
+
+    </library>
+    
 </syntax>

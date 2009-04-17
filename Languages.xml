@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+
+    <language id="com.conceitedsoftware.Sugar.diff">
+
+        <name>diff</name>
+
+        <root-zone>sourcecode.diff</root-zone>
+
+        <detectors>
+            <extension>diff</extension>
+            <extension>patch</extension>
+            <match-content lines="1">(?x)^
+		(===\ modified\ file
+		|==== \s* // .+ \s - \s .+ \s+ ====
+		|Index:\ 
+		|---\ [^%]
+		|\*\*\*.*\d{4}\s*$
+		|\d+(,\d+)* (a|d|c) \d+(,\d+)* $
+		|diff\ --git\ 
+		)</match-content>
+        </detectors>
+
+    </language>
+
+    <meta>
+        <name>Diff</name>
+        <description>A Sugar adding diff support for Espresso</description>
+        <author>Nicholas Penree</author>
+        <identifier>com.conceitedsoftware.Sugar.diff</identifier>
+        <url>http://github.com/conceited-drudge/diff.sugar</url>
+        <version status="preview">1.0b1</version>
+        <download format="git">git://github.com/conceited-drudge/diff.sugar.git</download>
+    </meta>
+
+</settings>
